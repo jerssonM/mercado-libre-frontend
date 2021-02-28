@@ -1,0 +1,79 @@
+@import 'config/styles/theme';
+
+.itemDetail-container {
+ background-color: $backgroundList;
+ padding: 32px;
+ border-radius: 4px;
+ margin-bottom: 40px;
+}
+
+.itemDetail-carousel {
+  :global .slider-wrapper {
+    margin-bottom: 24px;
+    width: 80%;
+  }
+  :global .slide {
+     background-color: $backgroundList;
+  }
+  :global .slide img {
+    width: auto;
+  }
+  :global .control-dots .dot.selected {
+    background-color: $secondary;
+  }
+  :global .carousel.carousel-slider .control-arrow {
+    top: calc(50% - 23px);
+    bottom: initial;
+  }
+  :global .carousel .control-next.control-arrow:before {
+    border-left-color: $arrowButtons;
+  }
+  :global .carousel .control-prev.control-arrow:before {
+    border-right-color: $arrowButtons;
+  }
+}
+
+.itemDetail-img-container {
+  height: 400px;
+  width: auto;
+}
+
+.itemDetail-img {
+  height: 100%;
+  object-fit: fill;
+  width: auto;
+}
+
+.itemDetail-information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.itemDetail-title {
+  text-align: left;
+  margin: 16px 0 32px 0;
+}
+
+.itemDetail-price {
+  margin-bottom: 32px;
+}
+
+.itemDetail-description {
+  margin-top: 64px;
+}
+
+.itemDetail-description-title {
+  margin-bottom: 32px;
+}
+
+.itemDetail-description-paragraph {
+  color: $fontTertiary;
+  letter-spacing: 2px;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .itemDetail-information {
+    margin-top: 32px;
+  }
+}

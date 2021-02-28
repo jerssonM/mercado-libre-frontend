@@ -1,0 +1,35 @@
+@import './theme';
+@import './components/styles';
+
+html, body {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color:  $background;
+}
+
+p {
+  margin: 0;
+}
+
+* {
+font-family: 'Open Sans', sans-serif;
+}
+
+.container-fluid {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+button, input {
+  outline: none;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+}

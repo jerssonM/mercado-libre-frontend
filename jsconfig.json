@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "__test__/*": ["__test__/*"],
+      "__mocks/*": ["__mocks__/*"],
+      "components/*": ["components/*"],
+      "config/*": ["config/*"],
+      "hooks/*": ["hooks/*"],
+      "utils/*": ["utils/*"]
+    }
+  },
+  "include": ["src"]
+}

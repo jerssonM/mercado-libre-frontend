@@ -1,0 +1,30 @@
+@import 'config/styles/theme';
+
+.breadcrumbs-list {
+  list-style: none;
+  display: flex;
+  margin: 16px 0;
+}
+
+.breadcrumbs-item {
+  color: $fontTertiary;
+  display: inline;
+  &:last-child {
+    font-weight: bold;
+  }
+  &:not(:last-child):hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.breadcrumbs-item-separator {
+  margin: 0 8px;
+  color: $fontTertiary;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .breadcrumbs-list {
+    flex-wrap: wrap;
+  }
+}
