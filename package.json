@@ -46,10 +46,10 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js, jsx}": [
+    "src/**/*.js": [
       "yarn prettier-lint --write",
       "yarn lint",
-      "yarn test --findRelatedTests",
+      "yarn test",
       "git add ."
     ]
   }

@@ -1,4 +1,4 @@
-const capitalizeText = (text = '') => {
+export const capitalizeText = (text = '') => {
   const splittedText = text.split(' ');
 
   return splittedText
@@ -10,4 +10,5 @@ const capitalizeText = (text = '') => {
     .trim();
 };
 
-export default capitalizeText;
+export const removeAccentsMark = (text) =>
+  text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');

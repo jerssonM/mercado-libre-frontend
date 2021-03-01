@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
 import loadStyles from 'utils/styles';
+import { removeAccentsMark } from 'utils/strings';
 import searchBarStyles from './searchBar.module.scss';
 
 const getStyles = loadStyles(searchBarStyles);
@@ -19,7 +20,10 @@ const SearchBar = ({ defaultValue }) => {
   const onSearch = (event) => {
     if (event && event.code !== 'Enter') return;
     if (searchText) {
-      push(`/items?search=${searchText.toLowerCase()}`, undefined);
+      push(
+        `/items?search=${removeAccentsMark(searchText.toLowerCase())}`,
+        undefined
+      );
     }
   };
 

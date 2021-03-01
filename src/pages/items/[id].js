@@ -3,10 +3,10 @@ import Head from 'next/head';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import capitalizeText from 'utils/strings';
 import SearchBar from 'components/SearchBar';
 import ItemDetail from 'components/ItemDetail';
 import { PRODUCT_URL } from 'config/constants';
+import { capitalizeText } from 'utils/strings';
 import Breadcrumbs from 'components/Breadcrumbs';
 import { useBreadcrumbs } from 'components/Breadcrumbs/BreadcrumbsProvider';
 

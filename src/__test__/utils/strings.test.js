@@ -1,4 +1,4 @@
-import capitalizeText from 'utils/strings';
+import { capitalizeText, removeAccentsMark } from 'utils/strings';
 
 describe('strings', () => {
   it('should capitalize text', () => {
@@ -6,5 +6,8 @@ describe('strings', () => {
   });
   it('should capitalize text with default params', () => {
     expect(capitalizeText()).toBe('');
+  });
+  it('should remove accents mark', () => {
+    expect(removeAccentsMark('Tést')).toBe('Test');
   });
 });

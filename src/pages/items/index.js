@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import React, { useMemo, useEffect } from 'react';
 
 import ItemList from 'components/ItemList';
-import capitalizeText from 'utils/strings';
 import SearchBar from 'components/SearchBar';
+import { capitalizeText } from 'utils/strings';
 import Breadcrumbs from 'components/Breadcrumbs';
 import { SEARCH_PRODUCT_URL } from 'config/constants';
 import { useBreadcrumbs } from 'components/Breadcrumbs/BreadcrumbsProvider';
