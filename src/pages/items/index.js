@@ -30,7 +30,7 @@ const Item = ({ item, productData }) => {
 
   useEffect(() => {
     NProgress.done();
-  }, []);
+  }, [item]);
 
   useEffect(() => {
     setBreadcrumbs(breadcrumbItems);
