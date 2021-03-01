@@ -15,7 +15,7 @@
   align-items: center;
   display: flex;
   margin-right: 16px;
-  height: 180px;
+  height: auto;
   &:hover {
     cursor: pointer;
   }
@@ -73,9 +73,6 @@
   }
   .item-info {
     flex-direction: column;
-  }
-  .item-img-container {
-    height: 120px;
   }
   .item-img {
     width: 120px;
