@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -20,15 +21,13 @@ const SearchBar = ({ defaultValue }) => {
   const onSearch = (event) => {
     if (event && event.code !== 'Enter') return;
     if (searchText) {
-      push(
-        `/items?search=${removeAccentsMark(searchText.toLowerCase())}`,
-        undefined
-      );
+      NProgress.start();
+      push(`/items?search=${removeAccentsMark(searchText.toLowerCase())}`);
     }
   };
 
   return (
-    <div className={getStyles('searchBar', 'row', 'center-xs')}>
+    <div className={getStyles('searchBar', 'row', 'center-xs')} id='searchBar'>
       <div className='col-xs-12 col-md-9'>
         <div className='row middle-xs'>
           <div

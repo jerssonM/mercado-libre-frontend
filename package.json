@@ -14,6 +14,7 @@
   "dependencies": {
     "currency.js": "^2.0.3",
     "next": "10.0.7",
+    "nprogress": "^0.2.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-responsive-carousel": "^3.2.12",
@@ -32,11 +33,11 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
-    "husky": "^5.1.1",
+    "husky": "4.2.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "jest-dom": "^4.0.0",
-    "lint-staged": "^10.5.4",
+    "lint-staged": "10.2.11",
     "prettier": "^2.2.1",
     "prop-types": "^15.7.2"
   },
@@ -47,9 +48,8 @@
   },
   "lint-staged": {
     "src/**/*.js": [
-      "yarn prettier-lint --write",
       "yarn lint",
-      "yarn test",
+      "yarn test --findRelatedTests",
       "git add ."
     ]
   }

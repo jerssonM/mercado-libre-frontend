@@ -1,12 +1,12 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React, { memo } from 'react';
 
 import loadStyles from 'utils/styles';
 import breadcrumbsStyles from './breadcrumbs.module.scss';
 
 const getStyles = loadStyles(breadcrumbsStyles);
 
-const Breadcrumbs = ({ items }) => {
+const Breadcrumbs = memo(({ items }) => {
   if (!items || !items.length) {
     return null;
   }
@@ -37,7 +37,7 @@ const Breadcrumbs = ({ items }) => {
       </div>
     </div>
   );
-};
+});
 
 Breadcrumbs.propTypes = {
   items: PropTypes.arrayOf(

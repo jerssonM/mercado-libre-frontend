@@ -1,5 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import Head from 'next/head';
+import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import React, { useMemo, useEffect } from 'react';
 
@@ -26,6 +27,10 @@ const Item = ({ item, productData }) => {
     }
     return [];
   }, [productData]);
+
+  useEffect(() => {
+    NProgress.done();
+  }, []);
 
   useEffect(() => {
     setBreadcrumbs(breadcrumbItems);

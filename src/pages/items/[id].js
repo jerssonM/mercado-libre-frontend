@@ -1,7 +1,8 @@
 /* eslint-disable react/forbid-prop-types */
 import Head from 'next/head';
-import React from 'react';
+import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 
 import SearchBar from 'components/SearchBar';
 import ItemDetail from 'components/ItemDetail';
@@ -20,6 +21,10 @@ const fetchItemData = async (id) => {
 
 const ItemDetailPage = ({ productDetail, productDescription }) => {
   const [breadcrumbs] = useBreadcrumbs();
+
+  useEffect(() => {
+    NProgress.done();
+  }, []);
 
   return (
     <div>
