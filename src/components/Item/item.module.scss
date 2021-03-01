@@ -12,7 +12,10 @@
 }
 
 .item-img-container {
+  align-items: center;
+  display: flex;
   margin-right: 16px;
+  height: 180px;
   &:hover {
     cursor: pointer;
   }
@@ -20,7 +23,6 @@
 
 .item-img {
   border-radius: 4px;
-  height: 180px;
   width: 180px;
 }
 

@@ -2,7 +2,7 @@
 
 > Desarrollado por Jersson Morales | [Linkedin](https://www.linkedin.com/in/jersson-stiven-morales-alza-022115183/https://www.linkedin.com/in/jersson-stiven-morales-alza-022115183/)
 
-[Url del proyeto]
+[Url del proyecto](https://mercado-libre-frontend.vercel.app/)
 
 #### Tecnologias usadas
 
