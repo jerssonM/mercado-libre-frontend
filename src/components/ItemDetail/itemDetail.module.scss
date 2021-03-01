@@ -57,6 +57,9 @@
 
 .itemDetail-price {
   margin-bottom: 32px;
+  &::first-letter {
+    margin-right: 16px;
+  }
 }
 
 .itemDetail-description {

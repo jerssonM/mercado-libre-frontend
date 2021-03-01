@@ -64,7 +64,7 @@ const ItemDetail = ({
               )}
             >
               <p className='paragraph--small'>
-                {formatedCondition} - {sold_quantity} vendidos
+                <span>{formatedCondition}</span> - {sold_quantity} vendidos
               </p>
               <p
                 className={getStyles(

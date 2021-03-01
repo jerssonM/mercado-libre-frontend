@@ -10,6 +10,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:jest/recommended',
     'plugin:react/recommended'
   ],
   parserOptions: {
@@ -17,7 +18,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  plugins: ['react'],
+  plugins: ['react', 'jest'],
   rules: {
     quotes: [2, 'single', 'avoid-escape'],
     'no-undef': 'error',
@@ -34,7 +35,8 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'import/no-extraneous-dependencies': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
-    'jsx-a11y/click-events-have-key-events': 'off'
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jest/no-mocks-import': 'off'
   },
   settings: {
     'import/resolver': {

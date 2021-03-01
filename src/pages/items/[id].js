@@ -1,11 +1,14 @@
 /* eslint-disable react/forbid-prop-types */
-import React from 'react';
 import Head from 'next/head';
+import React from 'react';
 import PropTypes from 'prop-types';
 
+import capitalizeText from 'utils/strings';
 import SearchBar from 'components/SearchBar';
 import ItemDetail from 'components/ItemDetail';
 import { PRODUCT_URL } from 'config/constants';
+import Breadcrumbs from 'components/Breadcrumbs';
+import { useBreadcrumbs } from 'components/Breadcrumbs/BreadcrumbsProvider';
 
 const fetchItemData = async (id) => {
   const [productDetail, productDescription] = await Promise.all([
@@ -15,28 +18,22 @@ const fetchItemData = async (id) => {
   return { props: { productDetail, productDescription } };
 };
 
-const ItemDetailPage = ({ productDetail, productDescription }) => (
-  <div>
-    <Head>
-      <title>Mercado libre</title>
-      <link rel='icon' href='/favicon.ico' />
-      <link rel='preconnect' href='https://fonts.gstatic.com' />
-      <link
-        href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap'
-        rel='stylesheet'
-      />
-      <link
-        rel='stylesheet'
-        href='https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css'
-        type='text/css'
-      />
-    </Head>
-    <section className='container-fluid'>
-      <SearchBar defaultValue='' />
-      <ItemDetail {...productDetail} description={productDescription} />
-    </section>
-  </div>
-);
+const ItemDetailPage = ({ productDetail, productDescription }) => {
+  const [breadcrumbs] = useBreadcrumbs();
+
+  return (
+    <div>
+      <Head>
+        <title>{capitalizeText(productDetail.title)} | Mercado libre</title>
+      </Head>
+      <section className='container-fluid'>
+        <SearchBar defaultValue='' />
+        <Breadcrumbs items={breadcrumbs} />
+        <ItemDetail {...productDetail} description={productDescription} />
+      </section>
+    </div>
+  );
+};
 
 ItemDetailPage.propTypes = {
   productDetail: PropTypes.object.isRequired,

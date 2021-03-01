@@ -44,6 +44,7 @@ const SearchBar = ({ defaultValue }) => {
             )}
           >
             <input
+              data-testid='searchBar-input'
               autoComplete='on'
               className={getStyles('searchBar-input', 'input-text')}
               placeholder='Nunca dejes de buscar'
@@ -58,6 +59,7 @@ const SearchBar = ({ defaultValue }) => {
               onClick={() => {
                 onSearch();
               }}
+              data-testid='searchBar-button'
               type='button'
             >
               <Image src='/img/search.png' alt='logo' width='25' height='25' />

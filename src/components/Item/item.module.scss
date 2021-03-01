@@ -45,6 +45,9 @@
 .item-price {
   text-align: left;
   margin-bottom: 32px;
+  &::first-letter {
+    margin-right: 16px;
+  }
   & p {
     margin-right: 8px;
     display: inline;
