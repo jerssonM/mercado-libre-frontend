@@ -1,31 +1,48 @@
 # Mercado Libre - Prueba tecnica
 
-> Desarrollado por Jersson Morales | [Linkedin](https://www.linkedin.com/in/jersson-stiven-morales-alza-022115183/)
+> Desarrollado por Jersson Morales | [LinkedIn](https://www.linkedin.com/in/jersson-stiven-morales-alza-022115183/)
 
-[Url del proyecto](https://mercado-libre-frontend.vercel.app/)
+
+### [URL demo](https://mercado-libre-frontend.vercel.app/)
+
+#### Capturas de pantalla
+![screenshot](./screenshot.png)
 
 #### Tecnologias usadas
 
-- React.js
-- Next.js (SSR y SEO) 
-- Sass (Pre - procesador css)
-- Jest & React-testing-libray (Pruebas unitarias)
+- **React.js.**
+- **Next.js** (SSR y SEO).
+- **Sass** (Pre - procesador css).
+- **Jest & React-testing-libray** (Pruebas unitarias).
 
 #### Librerias adicionales
 
-- currency.js (Formateo de decimales)
-- react-responsive-carousel (Componente de carousel) 
-- husky - lint-stagged (Validaciones de pruebas unitarias y linters previo a los commits)
+- **Currency.js** (Formateo de decimales).
+- **React-responsive-carousel** (Componente de carousel). 
+- **Prettier - eslint + plugins** (Validación de errores y formateo de archivos).
+- **Husky - lint-stagged** (Validaciones de pruebas unitarias y linters previo a los commits).
 
 #### Estructura  del proyecto
 
     frontend/
     |-- src/
     |   |-- __mocks__/  # Información de prueba para los componentes
+    |   |
     |   |-- __test__/   # Pruebas unitarias
+    |   |
     |   |-- components/ # Componentes generales
+    |   |   |-- Componente/ # Carpeta del componente
+    |   |   |   |-- index.js               # Componente
+    |   |   |   |-- componente.module.scss # Archivo de estilos
+    |   |-------
+    |   |
     |   |-- config/     # Archivos de configuración y constantes
+    |   |   |-- constants/ # Carpeta de constantes
+    |   |   |-- |-- index.js # Archivo de constantes generales
+    |   |-------
+    |   |
     |   |-- pages/      # Paginas
+    |   |
     |   |-- utils/      # Utilidades generales
     |-----
 
@@ -43,10 +60,3 @@
 #### Coverage
 ![coverage](./coverage.png)
 
-#### Capturas de pantalla
-
-##### Desktop
-<img width="1185" alt="CleanShot 2021-02-28 at 21 05 11@2x" src="https://user-images.githubusercontent.com/45905864/109443546-d5c95280-7a08-11eb-9820-030623fb7c1c.png">
-
-##### Mobile
-<img width="348" alt="CleanShot 2021-02-28 at 21 07 05@2x" src="https://user-images.githubusercontent.com/45905864/109443597-f0033080-7a08-11eb-844d-98ec74733e68.png">

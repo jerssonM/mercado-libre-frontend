@@ -10,7 +10,11 @@ import BreadcrumbsProvider from 'components/Breadcrumbs/BreadcrumbsProvider';
 
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
-    NProgress.configure({ showSpinner: false, parent: '#__next' });
+    NProgress.configure({
+      showSpinner: false,
+      parent: '#searchBar',
+      speed: 300
+    });
   }, []);
 
   return (

@@ -36,8 +36,10 @@ const ItemDetail = ({
           className={getStyles('itemDetail-container', 'col-xs-12', 'col-md-9')}
         >
           <div className='row between-xs'>
-            <div className='col-xs-12 col-md-7'>
+            <div className='col-xs-12 col-md-8'>
               <Carousel
+                autoPlay={false}
+                autoFocus={false}
                 showThumbs={false}
                 showStatus={false}
                 className={getStyles('itemDetail-carousel')}

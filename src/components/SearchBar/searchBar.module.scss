@@ -5,7 +5,7 @@
   background-color: $primary;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 4;
 }
 
 .searchBar-logo-container {
@@ -38,6 +38,9 @@
   height: 100%;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   &:hover {
     cursor: pointer;
     filter: brightness(0.9);

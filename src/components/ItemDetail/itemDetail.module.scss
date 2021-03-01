@@ -8,15 +8,16 @@
 }
 
 .itemDetail-carousel {
+  position: relative;
+  width: 90%;
   :global .slider-wrapper {
     margin-bottom: 24px;
-    width: 80%;
   }
   :global .slide {
-     background-color: $backgroundList;
+    background-color: $backgroundList;
   }
   :global .slide img {
-    width: auto;
+    object-fit: contain;
   }
   :global .control-dots .dot.selected {
     background-color: $secondary;
@@ -24,6 +25,15 @@
   :global .carousel.carousel-slider .control-arrow {
     top: calc(50% - 23px);
     bottom: initial;
+  }
+  :global .carousel.carousel-slider {
+    position: static;
+  }
+  :global .control-arrow.control-next {
+    right: -10px;
+  }
+  :global .control-arrow.control-prev {
+    left: -10px;
   }
   :global .carousel .control-next.control-arrow:before {
     border-left-color: $arrowButtons;
@@ -34,6 +44,9 @@
 }
 
 .itemDetail-img-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
   height: 400px;
   width: auto;
 }
@@ -58,7 +71,7 @@
 .itemDetail-price {
   margin-bottom: 32px;
   &::first-letter {
-    margin-right: 16px;
+    margin-right: 8px;
   }
 }
 
@@ -72,11 +85,23 @@
 
 .itemDetail-description-paragraph {
   color: $fontTertiary;
-  letter-spacing: 2px;
+  word-break: break-all;
 }
 
 @media (max-width: $breakpoint-mobile) {
   .itemDetail-information {
     margin-top: 32px;
+  }
+  .itemDetail-carousel {
+    margin: 0 auto;
+    :global .control-arrow.control-next {
+      right: -20px;
+    }
+    :global .control-arrow.control-prev {
+      left: -20px;
+    }
+  }
+  .itemDetail-img-container {
+    height: 300px;
   }
 }
