@@ -3,6 +3,7 @@ import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import loadStyles from 'utils/styles';
 import { removeAccentsMark } from 'utils/strings';
@@ -12,6 +13,7 @@ const getStyles = loadStyles(searchBarStyles);
 
 const SearchBar = ({ defaultValue }) => {
   const { push } = useRouter();
+  const { t } = useTranslation();
   const [searchText, setSearchText] = useState(defaultValue);
 
   const onChangeInputSearch = ({ target: { value } }) => {
@@ -50,7 +52,7 @@ const SearchBar = ({ defaultValue }) => {
               data-testid='searchBar-input'
               autoComplete='on'
               className={getStyles('searchBar-input', 'input-text')}
-              placeholder='Nunca dejes de buscar'
+              placeholder={t('neverStopSearching')}
               onKeyPress={(e) => {
                 onSearch(e);
               }}

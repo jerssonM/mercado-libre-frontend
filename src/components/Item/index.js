@@ -9,15 +9,7 @@ import itemBarStyles from './item.module.scss';
 
 const getStyles = loadStyles(itemBarStyles);
 
-const Item = ({
-  title,
-  price,
-  address,
-  thumbnail,
-  thumbnail_id,
-  onClick,
-  shipping
-}) => (
+const Item = ({ title, price, onClick, picture, city_name, free_shipping }) => (
   <li className={getStyles('item')}>
     <div className={getStyles('item-container')}>
       <div
@@ -25,11 +17,7 @@ const Item = ({
         onClick={onClick}
         role='figure'
       >
-        <img
-          src={thumbnail}
-          alt={thumbnail_id}
-          className={getStyles('item-img')}
-        />
+        <img src={picture} alt={title} className={getStyles('item-img')} />
       </div>
       <div className={getStyles('item-info')}>
         <div
@@ -38,8 +26,8 @@ const Item = ({
           role='region'
         >
           <div className={getStyles('item-price')}>
-            <p className='paragraph--large'>{formatPrice(price)}</p>
-            {shipping.free_shipping && (
+            <p className='paragraph--large'>{formatPrice(price.amount)}</p>
+            {free_shipping && (
               <Image
                 src='/img/shipping.png'
                 alt='logo'
@@ -51,9 +39,7 @@ const Item = ({
           <p className={getStyles('item-title', 'paragraph')}>{title}</p>
         </div>
         <div className={getStyles('item-addressInfo')}>
-          <p className={getStyles('item-city', 'captio')}>
-            {address.city_name}
-          </p>
+          <p className={getStyles('item-city', 'caption')}>{city_name}</p>
         </div>
       </div>
     </div>
@@ -62,20 +48,18 @@ const Item = ({
 
 Item.propTypes = {
   title: PropTypes.string,
-  price: PropTypes.number,
-  address: PropTypes.shape({ city_name: PropTypes.string }),
-  shipping: PropTypes.shape({ free_shipping: PropTypes.bool }),
-  thumbnail: PropTypes.string,
-  thumbnail_id: PropTypes.string,
+  price: PropTypes.shape({ amount: PropTypes.number }),
+  picture: PropTypes.string,
+  free_shipping: PropTypes.bool,
+  city_name: PropTypes.string,
   onClick: PropTypes.func
 };
 Item.defaultProps = {
   title: '',
-  price: 0,
-  address: { city_name: '' },
-  shipping: { free_shipping: false },
-  thumbnail: '',
-  thumbnail_id: '',
+  price: { amount: 0 },
+  city_name: '',
+  free_shipping: false,
+  picture: '',
   onClick: () => {}
 };
 

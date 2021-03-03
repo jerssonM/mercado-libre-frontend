@@ -5,14 +5,7 @@ import Breadcrumbs from 'components/Breadcrumbs';
 
 describe('Breadcrumbs', () => {
   it('render all items', () => {
-    render(
-      <Breadcrumbs
-        items={[
-          { id: 'test-1', name: 'breadcrumb-test-1' },
-          { id: 'test-2', name: 'breadcrumb-test-2' }
-        ]}
-      />
-    );
+    render(<Breadcrumbs items={['breadcrumb-test-1', 'breadcrumb-test-2']} />);
     expect(screen.getByText('breadcrumb-test-1')).toBeInTheDocument();
     expect(screen.getByText('breadcrumb-test-2')).toBeInTheDocument();
   });

@@ -17,6 +17,7 @@
 
 #### Librerias adicionales
 
+- **I18n** (Utilidad para el manejo de recursos de texto).
 - **Currency.js** (Formateo de decimales).
 - **React-responsive-carousel** (Componente de carousel). 
 - **Prettier - eslint + plugins** (Validación de errores y formateo de archivos).
@@ -37,6 +38,8 @@
     |   |-------
     |   |
     |   |-- config/     # Archivos de configuración y constantes
+    |   |-- |-- lang/       # Archivos de recursos para los textos
+    |   |-- |-- styles/    # Estilos generales y temas.
     |   |   |-- constants/ # Carpeta de constantes
     |   |   |-- |-- index.js # Archivo de constantes generales
     |   |-------

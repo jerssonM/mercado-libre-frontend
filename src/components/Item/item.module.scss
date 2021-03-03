@@ -23,6 +23,8 @@
 
 .item-img {
   border-radius: 4px;
+  object-fit: contain;
+  height: 180px;
   width: 180px;
 }
 
@@ -65,6 +67,7 @@
   text-align: center;
   color: $fontTertiary;
   margin-right: 40px;
+  text-transform: capitalize;
 }
 
 @media (max-width: $breakpoint-mobile) {

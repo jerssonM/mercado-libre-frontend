@@ -9,9 +9,7 @@ describe('ItemDetail', () => {
   it('should render content', () => {
     render(<ItemDetail {...itemDetailMock} />);
     expect(screen.getByText(itemDetailMock.title)).toBeInTheDocument();
-    expect(
-      screen.getByText(itemDetailMock.description.plain_text)
-    ).toBeInTheDocument();
+    expect(screen.getByText(itemDetailMock.description)).toBeInTheDocument();
   });
   it('should render used conditon', () => {
     render(

@@ -16,12 +16,12 @@ const Breadcrumbs = memo(({ items }) => {
       <div className='row center-xs'>
         <div className='col-md-9'>
           <ul className={getStyles('breadcrumbs-list')}>
-            {items.map(({ id, name }, index) => (
-              <li key={id}>
+            {items.map((item, index) => (
+              <li key={item}>
                 <p
                   className={getStyles('breadcrumbs-item', 'paragraph--small')}
                 >
-                  {name}
+                  {item}
                 </p>
                 {index !== items.length - 1 ? (
                   <span className={getStyles('breadcrumbs-item-separator')}>
@@ -40,9 +40,7 @@ const Breadcrumbs = memo(({ items }) => {
 });
 
 Breadcrumbs.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({ id: PropTypes.string, name: PropTypes.string })
-  )
+  items: PropTypes.arrayOf(PropTypes.string)
 };
 Breadcrumbs.defaultProps = { items: [] };
 

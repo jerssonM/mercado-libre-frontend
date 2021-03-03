@@ -12,14 +12,12 @@ import Breadcrumbs from 'components/Breadcrumbs';
 import { useBreadcrumbs } from 'components/Breadcrumbs/BreadcrumbsProvider';
 
 const fetchItemData = async (id) => {
-  const [productDetail, productDescription] = await Promise.all([
-    fetch(`${PRODUCT_URL}${id}`).then((response) => response.json()),
-    fetch(`${PRODUCT_URL}${id}/description`).then((response) => response.json())
-  ]);
-  return { props: { productDetail, productDescription } };
+  const response = await fetch(`${PRODUCT_URL}${id}`);
+  const data = await response.json();
+  return { props: data };
 };
 
-const ItemDetailPage = ({ productDetail, productDescription }) => {
+const ItemDetailPage = ({ item }) => {
   const [breadcrumbs] = useBreadcrumbs();
 
   useEffect(() => {
@@ -29,20 +27,19 @@ const ItemDetailPage = ({ productDetail, productDescription }) => {
   return (
     <div>
       <Head>
-        <title>{capitalizeText(productDetail.title)} | Mercado libre</title>
+        <title>{capitalizeText(item.title)} | Mercado libre</title>
       </Head>
       <section className='container-fluid'>
         <SearchBar defaultValue='' />
         <Breadcrumbs items={breadcrumbs} />
-        <ItemDetail {...productDetail} description={productDescription} />
+        <ItemDetail {...item} />
       </section>
     </div>
   );
 };
 
 ItemDetailPage.propTypes = {
-  productDetail: PropTypes.object.isRequired,
-  productDescription: PropTypes.object.isRequired
+  item: PropTypes.object.isRequired
 };
 
 export const getServerSideProps = async (ctx) =>

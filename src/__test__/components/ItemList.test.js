@@ -11,7 +11,7 @@ describe('ItemList', () => {
   it('render render content', () => {
     render(<ItemList items={[itemMock]} />);
     expect(screen.getByText(itemMock.title)).toBeInTheDocument();
-    expect(screen.getByText(itemMock.address.city_name)).toBeInTheDocument();
+    expect(screen.getByText(itemMock.city_name)).toBeInTheDocument();
   });
   it('should call onClick', () => {
     render(<ItemList items={[itemMock]} />);

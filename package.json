@@ -13,10 +13,12 @@
   },
   "dependencies": {
     "currency.js": "^2.0.3",
+    "i18next": "^19.9.1",
     "next": "10.0.7",
     "nprogress": "^0.2.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-i18next": "^11.8.8",
     "react-responsive-carousel": "^3.2.12",
     "sass": "^1.32.8"
   },

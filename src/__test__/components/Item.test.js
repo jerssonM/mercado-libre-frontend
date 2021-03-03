@@ -8,7 +8,7 @@ describe('Item', () => {
   it('render render content', () => {
     render(<Item {...itemMock} />);
     expect(screen.getByText(itemMock.title)).toBeInTheDocument();
-    expect(screen.getByText(itemMock.address.city_name)).toBeInTheDocument();
+    expect(screen.getByText(itemMock.city_name)).toBeInTheDocument();
   });
   it('should call onClick', () => {
     const spy = jest.fn();

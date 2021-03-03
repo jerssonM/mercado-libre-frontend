@@ -2,6 +2,8 @@
 import NProgress from 'nprogress';
 import React, { useEffect } from 'react';
 
+import i18n from 'config/lang';
+
 import 'nprogress/nprogress.css';
 import 'config/styles/global.scss';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -12,9 +14,10 @@ const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     NProgress.configure({
       showSpinner: false,
-      parent: '#searchBar',
+      parent: '#__next',
       speed: 300
     });
+    i18n.changeLanguage('es');
   }, []);
 
   return (

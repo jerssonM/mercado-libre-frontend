@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import PropTypes from 'prop-types';
 import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Carousel } from 'react-responsive-carousel';
 
 import loadStyles from 'utils/styles';
@@ -18,6 +19,8 @@ const ItemDetail = ({
   sold_quantity,
   description
 }) => {
+  const { t } = useTranslation();
+
   const formatedCondition = useMemo(() => {
     switch (condition) {
       case productConditions.NEW:
@@ -66,7 +69,8 @@ const ItemDetail = ({
               )}
             >
               <p className='paragraph--small'>
-                <span>{formatedCondition}</span> - {sold_quantity} vendidos
+                <span>{formatedCondition}</span> - {sold_quantity}{' '}
+                {t('soldOut')}
               </p>
               <p
                 className={getStyles(
@@ -78,10 +82,10 @@ const ItemDetail = ({
                 {title}
               </p>
               <p className={getStyles('itemDetail-price', 'price-large')}>
-                {formatPrice(price)}
+                {formatPrice(price.amount)}
               </p>
               <button className='btn btn-primary' type='button'>
-                Comprar
+                {t('buy')}
               </button>
             </div>
             <div
@@ -98,7 +102,7 @@ const ItemDetail = ({
                   'text--left'
                 )}
               >
-                Descripción del producto
+                {t('productDescription')}
               </p>
               <p
                 className={getStyles(
@@ -107,7 +111,7 @@ const ItemDetail = ({
                   'text--justify'
                 )}
               >
-                {description.plain_text}
+                {description}
               </p>
             </div>
           </div>
@@ -119,9 +123,9 @@ const ItemDetail = ({
 
 ItemDetail.propTypes = {
   title: PropTypes.string,
-  price: PropTypes.number,
+  price: PropTypes.shape({ amount: PropTypes.number }),
   condition: PropTypes.string,
-  description: PropTypes.shape({ plain_text: PropTypes.string }),
+  description: PropTypes.string,
   pictures: PropTypes.arrayOf(
     PropTypes.shape({ id: PropTypes.string, url: PropTypes.string })
   ),
@@ -133,7 +137,7 @@ ItemDetail.defaultProps = {
   condition: '',
   sold_quantity: 0,
   pictures: [],
-  description: { plain_text: '' }
+  description: ''
 };
 
 export default ItemDetail;
